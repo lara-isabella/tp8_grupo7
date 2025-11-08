@@ -1,6 +1,7 @@
 package java.ar.edu.unju.escmi.tp8.dominio;
 
 import java.time.LocalDate;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -26,6 +27,10 @@ public class Factura {
     @JoinColumn(name = "cliente_id")
     private Cliente cliente;
 
+    @OneToMany(mappedBy = "factura", cascade = CascadeType.ALL, orphanRemoval = true)
+    private List<DetalleFactura> detalles;
+
+
     // CONSTRUCTORES
 
     public Factura() {
@@ -38,6 +43,7 @@ public class Factura {
         this.estado = estado;
         this.domicilio = domicilio;
         this.cliente = cliente;
+        this.detalles = new ArrayList<>();
     }
 
     // GETTERS Y SETTERS
