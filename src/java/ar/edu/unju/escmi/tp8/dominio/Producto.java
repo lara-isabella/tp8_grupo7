@@ -1,9 +1,19 @@
 package java.ar.edu.unju.escmi.tp8.dominio;
 
+@Entity
+@Table(name="productos")
 public class Producto {
+    @Id 
+    @GeneratedValue(strategy = GenerationType.IDENTITY, unique = true)
     private long id;
+
+    @Column(name = "nombre_producto", nullable = false, length = 100)
     private String descripcion;
+
+    @Column(precision = 10, scale = 2)
     private double precioUnitario;
+
+    @Column(name = "visibilidad")
     private boolean estado;
 
     // CONSTRUCTORES

@@ -1,11 +1,25 @@
 package java.ar.edu.unju.escmi.tp8.dominio;
 
+@Entity
+@Table(name="clientes")
 public class Cliente {
+    @Id 
+    @Column(unique = true)
     private long id;
+
+    @Column
     private String nombre;
+
+    @Column
     private String apellido;
+
+    @Column
     private String domicilio;
+
+    @Column(unique = true)
     private int dni;
+
+    @Column(name = "visibilidad")
     private boolean estado;
 
     // CONSTRUCTORES
