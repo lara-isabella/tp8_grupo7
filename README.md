@@ -1,7 +1,7 @@
 # 💻 Programación Orientada a Objetos  
-### 🧠 Trabajo Práctico Nº5
+### 🧠 Trabajo Práctico Nº8
 
-Este repositorio contiene el desarrollo del TP5 para la materia **Programación Orientada a Objetos**
+Este repositorio contiene el desarrollo del TP8 para la materia **Programación Orientada a Objetos**, dirigido a asimilar los conocimientos de la unidad sobre persistencia de objetos.
 
 
 ## 👥 Integrantes del Grupo 7
