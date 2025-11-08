@@ -1,7 +1,14 @@
 package java.ar.edu.unju.escmi.tp8.dominio;
 
+@Entity
+@Table(name="detalles")
 public class DetalleFactura {
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
+
+    @Column(nullable = false)
     private int cantidad;
     private double subtotal;
 
@@ -38,4 +45,9 @@ public class DetalleFactura {
     }
 
     // METODOS
+    
+    public void calcularSubtotal() {
+        this.subtotal = this.cantidad * this.precioUnitario;
+    }
+
 }
