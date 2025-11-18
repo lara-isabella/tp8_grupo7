@@ -1,5 +1,6 @@
 package java.ar.edu.unju.escmi.tp8.dominio;
 
+import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
@@ -7,8 +8,9 @@ import java.util.List;
 @Entity
 @Table(name="facturas")
 public class Factura {
-    @Id 
-    @GeneratedValue(strategy = GenerationType.IDENTITY, unique = true)
+
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private long id;
 
     @Column
@@ -28,14 +30,14 @@ public class Factura {
     private Cliente cliente;
 
     @OneToMany(mappedBy = "factura", cascade = CascadeType.ALL, orphanRemoval = true)
-    private List<DetalleFactura> detalles;
+    private List<DetalleFactura> detalles = new ArrayList<>();
 
-
-    // CONSTRUCTORES
-
-    public Factura() {
-    }
     
+    // CONSTRUCTORES  
+    public Factura() {
+        this.fecha = LocalDate.now();
+    }
+
     public Factura(long id, LocalDate fecha, double total, boolean estado, String domicilio, Cliente cliente) {
         this.id = id;
         this.fecha = fecha;
@@ -43,56 +45,46 @@ public class Factura {
         this.estado = estado;
         this.domicilio = domicilio;
         this.cliente = cliente;
-        this.detalles = new ArrayList<>();
     }
+
 
     // GETTERS Y SETTERS
 
-    public long getId() {
-        return id;
+    public long getId() { return id; }
+    public void setId(long id) { this.id = id; }
+
+    public LocalDate getFecha() { return fecha; }
+    public void setFecha(LocalDate fecha) { this.fecha = fecha; }
+
+    public double getTotal() { return total; }
+    public void setTotal(double total) { this.total = total; }
+
+    public boolean isEstado() { return estado; }
+    public void setEstado(boolean estado) { this.estado = estado; }
+
+    public String getDomicilio() { return domicilio; }
+    public void setDomicilio(String domicilio) { this.domicilio = domicilio; }
+
+    public Cliente getCliente() { return cliente; }
+    public void setCliente(Cliente cliente) { this.cliente = cliente; }
+
+    public List<DetalleFactura> getDetalles() { return detalles; }
+    public void setDetalles(List<DetalleFactura> detalles) { this.detalles = detalles; }
+
+    
+    // MÉTODOS 
+
+    public void calcularTotal() {
+        double suma = 0;
+
+        for (DetalleFactura det : detalles) {
+            suma += det.getSubtotal();
+        }
+
+        this.total = suma;
+
+        // Esto es EXACTAMENTE lo que UML llama "Output As Label"
+        System.out.println("Total de la factura: " + this.total);
     }
-
-    public void setId(long id) {
-        this.id = id;
-    }
-
-    public LocalDate getFecha() {
-        return fecha;
-    }
-
-    public void setFecha(LocalDate fecha) {
-        this.fecha = fecha;
-    }
-
-    public double getTotal() {
-        return total;
-    }
-
-    public void setTotal(double total) {
-        this.total = total;
-    }
-
-    public boolean isEstado() {
-        return estado;
-    }
-
-    public void setEstado(boolean estado) {
-        this.estado = estado;
-    }
-
-    public String getDomicilio() {
-        return domicilio;
-    }
-
-    public void setDomicilio(String domicilio) {
-        this.domicilio = domicilio;
-    }
-
-    public Cliente getCliente() {
-        return cliente;
-    }
-
-    // METODOS
-
 
 }
