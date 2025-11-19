@@ -372,7 +372,7 @@ final String ROSA = "\u001B[38;5;205m";
         });
     }
 
-    // ========================== FACTURAS > 500000 ==========================
+    // ==========================/ FACTURAS > 500000 /==========================
 
     public static void mostrarFacturasAltas() {
         List<Factura> altas = facturaDao.obtenerFacturasMayoresAMedioMillon();
