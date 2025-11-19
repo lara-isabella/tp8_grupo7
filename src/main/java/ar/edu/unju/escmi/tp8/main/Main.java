@@ -206,7 +206,9 @@ public class Main {
     }
 
     // ========================== BUSCAR FACTURA ==========================
+
     private static void buscarFactura(Scanner scanner) {
+
         System.out.print("ID Factura: ");
         long id = scanner.nextLong();
         Factura f = facturaDao.buscarFacturaPorId(id);
