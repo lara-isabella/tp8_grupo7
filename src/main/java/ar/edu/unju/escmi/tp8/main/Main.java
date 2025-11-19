@@ -210,7 +210,7 @@ final String ROSA = "\u001B[38;5;205m";
 
     // ========================== BUSCAR FACTURA ==========================
 
-    private static void buscarFactura(Scanner scanner) {
+    public static void buscarFactura(Scanner scanner) {
 
         System.out.print("ID Factura: ");
         long id = scanner.nextLong();
@@ -339,7 +339,7 @@ final String ROSA = "\u001B[38;5;205m";
 
     // ========================== MOSTRAR FACTURAS ==========================
 
-    private static void mostrarFacturas() {
+    public static void mostrarFacturas() {
         System.out.println("\n=== TODAS LAS FACTURAS ===");
         List<Factura> lista = facturaDao.obtenerFacturas();
 
@@ -358,7 +358,7 @@ final String ROSA = "\u001B[38;5;205m";
 
     // ========================== MOSTRAR CLIENTES ==========================
 
-    private static void mostrarClientes() {
+    public static void mostrarClientes() {
         System.out.println("\n=== CLIENTES ===");
         List<Cliente> lista = clienteDao.obtenerClientes();
 
@@ -372,9 +372,9 @@ final String ROSA = "\u001B[38;5;205m";
         });
     }
 
-    // ========================== FACTURAS > 500000 ==========================
+    // ==========================/ FACTURAS > 500000 /==========================
 
-    private static void mostrarFacturasAltas() {
+    public static void mostrarFacturasAltas() {
         List<Factura> altas = facturaDao.obtenerFacturasMayoresAMedioMillon();
 
         System.out.println("\n=== FACTURAS MAYORES A $500.000 ===");
