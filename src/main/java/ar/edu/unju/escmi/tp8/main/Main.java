@@ -210,7 +210,7 @@ final String ROSA = "\u001B[38;5;205m";
 
     // ========================== BUSCAR FACTURA ==========================
 
-    public static void buscarFactura(Scanner scanner) {
+    private static void buscarFactura(Scanner scanner) {
 
         System.out.print("ID Factura: ");
         long id = scanner.nextLong();
