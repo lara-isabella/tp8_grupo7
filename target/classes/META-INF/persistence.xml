@@ -13,7 +13,6 @@
    <class>ar.edu.unju.escmi.tp8.dominio.Factura</class>
    <class>ar.edu.unju.escmi.tp8.dominio.DetalleFactura</class>
 
-        
         <!-- Propiedades de conexión -->
         <properties>
 			<!-- Conexión a la base de datos -->
