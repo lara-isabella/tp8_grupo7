@@ -1,1 +1,0 @@
-Carpeta creada para resolver error de build path (puede borrarse).
