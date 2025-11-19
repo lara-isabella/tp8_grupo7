@@ -8,8 +8,11 @@
 	    <!-- Proveedor de JPA -->
         <provider>org.hibernate.jpa.HibernatePersistenceProvider</provider>
     <!-- Clases de entidades -->
-    <class>ar.edu.unju.escmi.tp8.dominio.Cliente</class>
-        
+   <class>ar.edu.unju.escmi.tp8.dominio.Cliente</class>
+   <class>ar.edu.unju.escmi.tp8.dominio.Producto</class>
+   <class>ar.edu.unju.escmi.tp8.dominio.Factura</class>
+   <class>ar.edu.unju.escmi.tp8.dominio.DetalleFactura</class>
+
         <!-- Propiedades de conexión -->
         <properties>
 			<!-- Conexión a la base de datos -->

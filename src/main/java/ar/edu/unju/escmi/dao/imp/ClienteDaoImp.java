@@ -45,8 +45,7 @@ public class ClienteDaoImp implements IClienteDao {
     }
 
     public Cliente obtenerClientePorId(Long id) {
-        // Inicializamos el EntityManager y la variable de retorno.
-        // Usamos 'null' como valor predeterminado si no se encuentra o hay error.
+        // Inicializamos el EntityManager y la variable de retorno. Usamos 'null' como valor predeterminado si no se encuentra o hay error.
         EntityManager manager = null;
         Cliente cliente = null;
 
